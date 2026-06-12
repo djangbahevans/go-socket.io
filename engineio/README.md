@@ -30,7 +30,7 @@ Please check example folder for details.
 package main
 
 import (
-	"io/ioutil"
+	"io"
 	"log"
 	"net/http"
 
@@ -52,7 +52,7 @@ func main() {
 				
 				for {
 					t, r, _ := conn.NextReader()
-					b, _ := ioutil.ReadAll(r)
+					b, _ := io.ReadAll(r)
 					r.Close()
 
 					w, _ := conn.NextWriter(t)

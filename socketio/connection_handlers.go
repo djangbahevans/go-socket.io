@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/djangbahevans/go-socket.io/engineio/logger"
-	"github.com/djangbahevans/go-socket.io/parser"
+	"github.com/djangbahevans/go-socket.io/socketio/parser"
 )
 
 var emtpyFH = newAckFunc(func() {})

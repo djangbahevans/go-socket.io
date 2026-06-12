@@ -1,7 +1,8 @@
 package websocket
 
 import (
-	"io/ioutil"
+	"io"
+
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -11,9 +12,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/googollee/go-socket.io/engineio/frame"
-	"github.com/googollee/go-socket.io/engineio/packet"
-	"github.com/googollee/go-socket.io/engineio/transport"
+	"github.com/djangbahevans/go-socket.io/engineio/frame"
+	"github.com/djangbahevans/go-socket.io/engineio/packet"
+	"github.com/djangbahevans/go-socket.io/engineio/transport"
 )
 
 var tests = []struct {
@@ -99,7 +100,7 @@ func TestWebsocket(t *testing.T) {
 			assert.Equal(t, test.ft, ft)
 			assert.Equal(t, test.pt, pt)
 
-			b, err := ioutil.ReadAll(r)
+			b, err := io.ReadAll(r)
 			require.NoError(t, err)
 
 			err = r.Close()
@@ -134,7 +135,7 @@ func TestWebsocket(t *testing.T) {
 		assert.Equal(t, test.ft, ft)
 		assert.Equal(t, test.pt, pt)
 
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		require.NoError(t, err)
 
 		err = r.Close()

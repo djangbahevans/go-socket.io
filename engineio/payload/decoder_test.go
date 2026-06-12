@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"errors"
 	"io"
-	"io/ioutil"
+	
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -59,7 +59,7 @@ func TestDecoder(t *testing.T) {
 				must.Equal(io.EOF, err)
 				break
 			}
-			data, err := ioutil.ReadAll(fr)
+			data, err := io.ReadAll(fr)
 			must.Nil(err)
 			packet := Packet{
 				ft:   ft,

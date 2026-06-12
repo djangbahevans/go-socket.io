@@ -11,7 +11,7 @@ Current this library supports 1.4 version of the Socket.IO client. It supports r
 ![Build Status](https://github.com/djangbahevans/go-socket.io/workflows/CI/badge.svg)
 [![GoDoc](http://godoc.org/github.com/djangbahevans/go-socket.io?status.svg)](http://godoc.org/github.com/djangbahevans/go-socket.io)
 [![License](https://img.shields.io/github/license/golangci/golangci-lint)](/LICENSE)
-[![Release](https://img.shields.io/github/release/googollee/go-socket.io.svg)](https://github.com/djangbahevans/go-socket.io/releases/latest)
+[![Release](https://img.shields.io/github/release/djangbahevans/go-socket.io.svg)](https://github.com/djangbahevans/go-socket.io/releases/latest)
 [![Go Report Card](https://goreportcard.com/badge/github.com/djangbahevans/go-socket.io)](https://goreportcard.com/report/github.com/djangbahevans/go-socket.io)
 
 ## Contents

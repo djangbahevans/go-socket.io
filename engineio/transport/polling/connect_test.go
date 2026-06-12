@@ -3,7 +3,8 @@ package polling
 import (
 	"bytes"
 	"fmt"
-	"io/ioutil"
+	"io"
+
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -13,9 +14,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/googollee/go-socket.io/engineio/frame"
-	"github.com/googollee/go-socket.io/engineio/packet"
-	"github.com/googollee/go-socket.io/engineio/transport"
+	"github.com/djangbahevans/go-socket.io/engineio/frame"
+	"github.com/djangbahevans/go-socket.io/engineio/packet"
+	"github.com/djangbahevans/go-socket.io/engineio/transport"
 )
 
 func TestDialOpen(t *testing.T) {
@@ -55,7 +56,7 @@ func TestDialOpen(t *testing.T) {
 		if r.Method == http.MethodPost {
 			must.Equal(cp.SID, sid)
 
-			b, err := ioutil.ReadAll(r.Body)
+			b, err := io.ReadAll(r.Body)
 			must.NoError(err)
 
 			should.Equal("6:4hello", string(b))

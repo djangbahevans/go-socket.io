@@ -10,7 +10,7 @@ import (
 	"github.com/djangbahevans/go-socket.io/engineio/logger"
 	"github.com/djangbahevans/go-socket.io/engineio/transport"
 	"github.com/djangbahevans/go-socket.io/engineio/transport/polling"
-	"github.com/djangbahevans/go-socket.io/parser"
+	"github.com/djangbahevans/go-socket.io/socketio/parser"
 )
 
 var EmptyAddrErr = errors.New("empty addr")

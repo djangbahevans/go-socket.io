@@ -8,7 +8,7 @@ import (
 
 	"github.com/djangbahevans/go-socket.io/engineio"
 	"github.com/djangbahevans/go-socket.io/engineio/logger"
-	"github.com/djangbahevans/go-socket.io/parser"
+	"github.com/djangbahevans/go-socket.io/socketio/parser"
 )
 
 // Server is a go-socket.io server.

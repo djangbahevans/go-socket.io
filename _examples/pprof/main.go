@@ -6,7 +6,7 @@ import (
 	"net/http/pprof"
 	_ "net/http/pprof"
 
-	socketio "github.com/djangbahevans/go-socket.io"
+	socketio "github.com/djangbahevans/go-socket.io/socketio"
 	"github.com/djangbahevans/go-socket.io/engineio"
 	"github.com/djangbahevans/go-socket.io/engineio/transport"
 	"github.com/djangbahevans/go-socket.io/engineio/transport/polling"

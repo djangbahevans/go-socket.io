@@ -2,7 +2,7 @@ package engineio
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -13,12 +13,12 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/googollee/go-socket.io/engineio/frame"
-	"github.com/googollee/go-socket.io/engineio/packet"
-	"github.com/googollee/go-socket.io/engineio/session"
-	"github.com/googollee/go-socket.io/engineio/transport"
-	"github.com/googollee/go-socket.io/engineio/transport/polling"
-	"github.com/googollee/go-socket.io/engineio/transport/websocket"
+	"github.com/djangbahevans/go-socket.io/engineio/frame"
+	"github.com/djangbahevans/go-socket.io/engineio/packet"
+	"github.com/djangbahevans/go-socket.io/engineio/session"
+	"github.com/djangbahevans/go-socket.io/engineio/transport"
+	"github.com/djangbahevans/go-socket.io/engineio/transport/polling"
+	"github.com/djangbahevans/go-socket.io/engineio/transport/websocket"
 )
 
 func TestEnginePolling(t *testing.T) {
@@ -49,7 +49,7 @@ func TestEnginePolling(t *testing.T) {
 		must.NoError(err)
 		should.Equal(session.TEXT, ft)
 
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		must.NoError(err)
 		should.Equal("hello你好", string(b))
 
@@ -83,7 +83,7 @@ func TestEnginePolling(t *testing.T) {
 	must.NoError(err)
 	should.Equal(session.BINARY, ft)
 
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	must.NoError(err)
 	should.Equal([]byte{1, 2, 3, 4}, b)
 
@@ -132,7 +132,7 @@ func TestEngineWebsocket(t *testing.T) {
 
 		should.Equal(session.TEXT, ft)
 
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		must.NoError(err)
 
 		should.Equal("hello你好", string(b))
@@ -175,7 +175,7 @@ func TestEngineWebsocket(t *testing.T) {
 	must.NoError(err)
 	should.Equal(session.BINARY, ft)
 
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	must.NoError(err)
 	should.Equal([]byte{1, 2, 3, 4}, b)
 
@@ -218,7 +218,7 @@ func TestEngineUpgrade(t *testing.T) {
 		must.NoError(err)
 		should.Equal(session.TEXT, ft)
 
-		b, err := ioutil.ReadAll(r)
+		b, err := io.ReadAll(r)
 		must.NoError(err)
 		should.Equal("hello你好", string(b))
 
@@ -285,7 +285,7 @@ func TestEngineUpgrade(t *testing.T) {
 	should.Equal(frame.String, ft)
 	should.Equal(packet.PONG, pt)
 
-	b, err := ioutil.ReadAll(r)
+	b, err := io.ReadAll(r)
 	must.NoError(err)
 
 	should.Equal("probe", string(b))
@@ -315,7 +315,7 @@ func TestEngineUpgrade(t *testing.T) {
 	should.Equal(frame.Binary, ft)
 	should.Equal(packet.MESSAGE, pt)
 
-	b, err = ioutil.ReadAll(r)
+	b, err = io.ReadAll(r)
 	must.NoError(err)
 
 	must.NoError(r.Close())

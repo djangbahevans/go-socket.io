@@ -5,11 +5,11 @@ import (
 	"io"
 	"testing"
 
+	"github.com/djangbahevans/go-socket.io/engineio/session"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/googollee/go-socket.io/engineio/session"
-	"github.com/googollee/go-socket.io/parser"
+	"github.com/djangbahevans/go-socket.io/socketio/parser"
 )
 
 type testStr struct {
