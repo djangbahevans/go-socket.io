@@ -7,7 +7,7 @@ import (
 	"github.com/gomodule/redigo/redis"
 
 	"github.com/djangbahevans/go-socket.io/engineio"
-	"github.com/djangbahevans/go-socket.io/logger"
+	"github.com/djangbahevans/go-socket.io/engineio/logger"
 	"github.com/djangbahevans/go-socket.io/parser"
 )
 

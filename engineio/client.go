@@ -8,11 +8,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/googollee/go-socket.io/engineio/frame"
-	"github.com/googollee/go-socket.io/engineio/packet"
-	"github.com/googollee/go-socket.io/engineio/session"
-	"github.com/googollee/go-socket.io/engineio/transport"
-	"github.com/googollee/go-socket.io/logger"
+	"github.com/djangbahevans/go-socket.io/engineio/frame"
+	"github.com/djangbahevans/go-socket.io/engineio/logger"
+	"github.com/djangbahevans/go-socket.io/engineio/packet"
+	"github.com/djangbahevans/go-socket.io/engineio/session"
+	"github.com/djangbahevans/go-socket.io/engineio/transport"
 )
 
 // Opener is client connection which need receive open message first.

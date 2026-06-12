@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"net/url"
 
-	"github.com/googollee/go-socket.io/engineio/packet"
-	"github.com/googollee/go-socket.io/engineio/transport"
-	"github.com/googollee/go-socket.io/logger"
+	"github.com/djangbahevans/go-socket.io/engineio/logger"
+	"github.com/djangbahevans/go-socket.io/engineio/packet"
+	"github.com/djangbahevans/go-socket.io/engineio/transport"
 )
 
 // Dialer is dialer configure.
